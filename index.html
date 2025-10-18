@@ -4177,24 +4177,4 @@ function stopMeditation(){
   const overlay = $('meditationOverlay'); if(overlay) overlay.remove();
   document.body.classList.remove('in-meditation');
 }
-function formatTime(s){ const m = Math.floor(s/60); const sec = s % 60; return (String(m).padStart(2,'0') + ':' + String(sec).padStart(2,'0')); }
-
-function toggleBreathwork() {
-    const viz = $('breathingVisualizer');
-    const btn = $('toggleBreathworkBtn');
-    const instruction = $('breathInstruction');
-    
-    if (viz.classList.contains('active')) {
-        viz.classList.remove('active');
-        btn.textContent = 'Start Breathing';
-        instruction.textContent = 'Stopped';
-        clearInterval(breathworkInterval);
-        breathworkInterval = null;
-    } else {
-        viz.classList.add('active');
-        btn.textContent = 'Stop Breathing';
-        let step = 0;
-        const instructions = ['Inhale', 'Hold', 'Exhale', 'Hold'];
-        
-        const updateInstruction = () => {
-            
+function formatTime(s){ const m = Math.floor(s/60); const sec = s % 60; return (String(m).padStart(2,'0') + ':' + String(sec).padStart
